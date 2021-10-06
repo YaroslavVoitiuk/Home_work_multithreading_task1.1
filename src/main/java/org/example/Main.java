@@ -1,9 +1,11 @@
 package org.example;
 
 
+import java.util.concurrent.*;
+
 public class Main {
 
-    public static void main(String[] args ) throws InterruptedException {
+    public static void main(String[] args ) throws InterruptedException, ExecutionException {
         ThreadGroup threadGroup = new ThreadGroup("Main group");
         Thread thread1 = new MyThread(threadGroup,"1");
         Thread thread2 = new MyThread(threadGroup,"2");
@@ -17,7 +19,6 @@ public class Main {
         Thread.sleep(10000);
         System.out.println("Завершаю потоки...");
         threadGroup.interrupt();
-
 
     }
 }
